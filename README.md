@@ -1,6 +1,6 @@
 # PCS-IoT
 
-Código para as placas Arduino Uno e NodeMCU ESP8266.
+IoT do projeto de PCS3100, grupo 18, 2021. Código para as placas Arduino Uno e NodeMCU ESP8266.
 
 ### 🛠 Tecnologias
 
