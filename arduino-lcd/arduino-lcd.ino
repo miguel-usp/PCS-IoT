@@ -24,11 +24,7 @@ LiquidCrystal_I2C lcd(0x27,16,2);
 void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   lcd.init();
-  
   Serial.begin(115200);
-  delay(1000);
-  Serial.println("Iniciando");
-  delay(300);
 }
 
 char senhaCorreta[MAXP], senha[MAXP], incomingByte;
@@ -50,12 +46,7 @@ void loop() {
   }
   if (Serial.available() > 0) { 
     incomingByte = Serial.read();
-    Serial.println("Incoming Byte, digitoCorreta, corretaState ");
-    Serial.println(incomingByte, DEC);
-    Serial.println(digitoCorreta);
-    Serial.println(corretaState);
     if (incomingByte == 10) {
-      Serial.println(senhaCorreta);
       if (corretaState == 2) {
         corretaState = 1;
         digitoCorreta = 0;
@@ -123,8 +114,6 @@ void loop() {
             lcd.setCursor(2,1);
             lcd.print("Tente de novo");
             delayWaiting = 1;
-
-            Serial.println(senha);
           }
           for (i = 0; i <= digitoSenha; i++) 
             senha[i] = 0;
